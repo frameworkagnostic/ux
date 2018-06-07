@@ -1,10 +1,8 @@
 {
-  "name": "@frameworkagnostic/ux",
-  "private": true,
+  "name": "@frameworkagnostic/ux-react-button",
   "version": "0.1.0",
+  "main": "lib/index.js",
   "scripts": {
-    "test-travis": "lerna run test",
-    "postinstall": "lerna bootstrap",
     "precommit": "lint-staged",
     "lint": "node __cicd__/npm-run/lint.js",
     "start:dev": "node ./__cicd__/npm-run/build.js --devServer",
@@ -18,9 +16,6 @@
   },
   "dependencies": {
     "prop-types": "15.6.1"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "devDependencies": {
     "@storybook/addon-actions": "3.3.11",
