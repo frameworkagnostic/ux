@@ -17,7 +17,7 @@ module.exports = {
     whitelist: []
   })],
 	entry: {
-		'main': 'src/base-components/index.js',
+		'main': 'src/index.js',
 	},
 	output: {
     path: path.join(__dirname, `bundles/main`),

@@ -9,6 +9,13 @@ const ERROR = 'error';
 const WARNING = isTruthy(process.env.CI) ? ERROR : 'warn';
 
 module.exports = {
+  "parser": "babel-eslint",
+  "env": {
+      "browser": true,
+      "node": true,
+      "jest/globals": true
+  },
+  "extends": "airbnb",
   "rules": {
     "import/order": [ERROR, {
       "groups": [
@@ -28,6 +35,7 @@ module.exports = {
     "import/exports-last": [ERROR],
     'import/default': [ERROR],
   },
+  "plugins": ["jest"],
   settings: {
     "import/core-modules": ['react'],
   }
