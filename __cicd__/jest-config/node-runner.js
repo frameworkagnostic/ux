@@ -33,13 +33,17 @@ const jestConfig = {
     ".spec.js",
     ".spec-csr.jsx",
     "/__tests__/",
+    "/dist/",
+    "/lib/",
+    "/bundles/",
+    "/test-results/",
     ".stories.js"
   ],
   "collectCoverageFrom": [
-    "src/*.js",
-    "src/**/*.js",
-    "src/*.jsx",
-    "src/**/*.jsx"
+    "*.js",
+    "**/*.js",
+    "*.jsx",
+    "**/*.jsx",
   ],
   "coverageReporters": [
     "text-summary",

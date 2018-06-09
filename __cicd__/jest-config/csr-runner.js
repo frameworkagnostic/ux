@@ -41,7 +41,11 @@ const jestConfig = {
     "src/*.js",
     "src/**/*.js",
     "src/*.jsx",
-    "src/**/*.jsx"
+    "src/**/*.jsx",
+    "package/**/src/*.js",
+    "package/**/src/**/*.js",
+    "package/**/src/*.jsx",
+    "package/**/src/**/*.jsx"
   ],
   "coverageReporters": [
     "text-summary",

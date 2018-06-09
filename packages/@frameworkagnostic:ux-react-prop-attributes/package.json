@@ -1,5 +1,5 @@
 {
-  "name": "@frameworkagnostic/ux-react-props",
+  "name": "@frameworkagnostic/ux-react-prop-attributes",
   "version": "0.1.0",
   "main": "lib/index.js",
   "scripts": {},

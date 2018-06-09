@@ -8,7 +8,7 @@ const npmTestCsr = require('../tasks/npm-test-csr');
 
 const tasks = new Listr([
   npmTestNode,
-  npmTestCsr,
+  //npmTestCsr,
 ]);
 
 tasks.run().catch(err => {
