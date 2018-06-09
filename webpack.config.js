@@ -1,44 +1,30 @@
 
+const R = require('ramda');
 const path = require('path');
-const nodeExternals = require('webpack-node-externals');
-const webpack = require('webpack');
+const webpackBaseConfig = require('./__cicd__/webpack-config/webpack-base.config.js');
 
-//Loaders
-const rules = [
-  ...require('./__cicd__/webpack-loaders/jsx'),
-  require('./__cicd__/webpack-loaders/css'),
-  require('./__cicd__/webpack-loaders/scss'),
-];
+const lib = path.join(__dirname, '../../packages/@frameworkagnostic:ux-react-button/lib');
+const dist = path.join(__dirname, '../../packages/@frameworkagnostic:ux-react-button/dist');
+const bundles = path.join(__dirname, '../../packages/@frameworkagnostic:ux-react-button/bundles');
 
-module.exports = {
-  node: false,
-  target: 'web',
-  externals: [nodeExternals({
-    whitelist: []
-  })],
-	entry: {
-		'main': 'src/base-components/index.js',
-	},
-	output: {
-    path: path.join(__dirname, `bundles/main`),
-		filename: '[name].bundle.js',
-		chunkFilename: '[id].chunk.js'
-	},
-  resolve: {
-    extensions: ['.js', '.jsx' , '.scss'],
-    modules: [path.resolve(__dirname), 'node_modules', '.'],
-    alias: {}
+const buttons = {
+  entry: {
+    main: [
+      path.join(__dirname, './packages/@frameworkagnostic:ux-react-button/index.webpack.js')
+    ]
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      BROWSER: true,
-      NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'production'),
-      'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'production')
-      }
-    })
-  ],
-  module: {
-    rules
+  output: {
+    path: path.join(__dirname, './packages/@frameworkagnostic:ux-react-button/bundles'),
+  },
+  resolve: {
+    modules: [path.resolve(__dirname), 'node_modules', '.']
   }
 };
+
+module.exports = [
+  buttons
+].map((config) => {
+  return R.mergeDeepWithKey((k, l, r) => {
+    return k === 'values' ? R.concat(l, r) : r;
+  }, webpackBaseConfig(), config);
+});

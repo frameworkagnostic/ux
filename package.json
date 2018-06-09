@@ -5,13 +5,13 @@
   "scripts": {
     "test-travis": "lerna run test",
     "postinstall": "lerna bootstrap",
-    "precommit": "lerna run lint-staged",
-    "lint": "lerna run lint",
+    "precommit": "lint-staged",
+    "lint": "node __cicd__/npm-run/lint.js && lerna run lint",
     "start:dev": "node ./__cicd__/npm-run/build.js --devServer",
-    "build": "lerna run build",
+    "build": "node ./__cicd__/npm-run/build.js && lerna run build",
     "posttest": "npm run lint",
     "pretest": "npm run build",
-    "test": "lerna run test",
+    "test": "DEBUG=*ux* node ./__cicd__/npm-run/test.js && lerna run test",
     "storybook:start": "start-storybook -c ./__cicd__/storybook -p 5009",
     "storybook:build": "build-storybook -c ./__cicd__/storybook -o docs/interactive-demos",
     "registry": "npm config set registry https://registry.npmjs.org/"
