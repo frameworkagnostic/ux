@@ -9,6 +9,7 @@ const create = (data) => {
     stories: files.map(function(filename) {
       return {
         ...data,
+        filename,
         source: data.context(filename),
       };
     })

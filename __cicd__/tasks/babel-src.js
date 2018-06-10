@@ -29,7 +29,7 @@ const tasks = fs.readdirSync(searchIn)
 		    dist,
 		    `--copy-files`,
 		    `--ignore`,
-		    `spec.,mock.`,
+		    `spec.,mock.,.stories.jsx`,
 		  ], {
 				stdout: process.stdout,
 				stderr: process.stderr,

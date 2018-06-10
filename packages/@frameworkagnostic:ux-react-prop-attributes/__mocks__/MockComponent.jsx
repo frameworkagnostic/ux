@@ -1,43 +1,18 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const PropAttributes = (props) => {
-  const {
-    attrs,
-    children,
-    render,
-    renderComponent,
-    Component,
-    Components,
-    inlineStyles,
-    classNames,
-    ...remainingProps
-  } = props;
-
-  if (renderComponent) {
-    return React.createElement(renderComponent, {
-      ...remainingProps,
-      Component,
-      Components,
-      inlineStyles,
-      classNames,
-      attrs: attrs || remainingProps,
-    }, children);
+class MockComponent extends React.PureComponent {
+  render() {
+    const { children, ...props } = this.props;
+    return (
+      <a {...props}>
+        {children}
+      </a>
+    );
   }
+}
 
-  return render({
-    ...remainingProps,
-    children,
-    Component,
-    Components,
-    inlineStyles,
-    classNames,
-    attrs: attrs || remainingProps,
-  });
-};
-
-PropAttributes.propTypes = {
+MockComponent.propTypes = {
   attrs: PropTypes.objectOf(PropTypes.object),
   style: PropTypes.objectOf(PropTypes.string),
   children: PropTypes.node,
@@ -50,7 +25,7 @@ PropAttributes.propTypes = {
   renderComponent: PropTypes.func,
 };
 
-PropAttributes.defaultProps = {
+MockComponent.defaultProps = {
   attrs: null,
   children: null,
   style: {},
@@ -67,4 +42,4 @@ PropAttributes.defaultProps = {
   ),
 };
 
-export { PropAttributes };
+export { MockComponent };

@@ -10,6 +10,6 @@
     "react": "15.0.0 || ^16.0.0"
   },
   "devDependencies": {
-    "@frameworkagnostic/ux-react-prop-attributes": "^0.0.1-alpha.4"
+    "@frameworkagnostic/ux-react-prop-attributes": "0.0.1-alpha.4"
   }
 }

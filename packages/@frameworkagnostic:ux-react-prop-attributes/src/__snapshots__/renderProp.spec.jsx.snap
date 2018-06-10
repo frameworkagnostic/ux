@@ -2,6 +2,54 @@
 
 exports[`<PropAttributes /> with no attributes snapshot 1`] = `
 <div>
-  No renderProp provided
+  No render component provided
+</div>
+`;
+
+exports[`<PropAttributes /> with renderProp <Component /> snapshot 1`] = `
+<a
+  attrs={
+    Object {
+      "className": "",
+      "href": "/",
+      "style": Object {},
+    }
+  }
+  className=""
+  classNames={Object {}}
+  href="/"
+  inlineStyles={Object {}}
+  render={[Function]}
+  renderComponent={[Function]}
+  style={Object {}}
+>
+  Hello
+</a>
+`;
+
+exports[`<PropAttributes /> with renderProp snapshot 1`] = `
+<a
+  attrs={
+    Object {
+      "className": "",
+      "href": "/",
+      "style": Object {},
+    }
+  }
+  className=""
+  classNames={Object {}}
+  href="/"
+  inlineStyles={Object {}}
+  render={[Function]}
+  renderComponent={[Function]}
+  style={Object {}}
+>
+  Hello
+</a>
+`;
+
+exports[`<PropAttributes /> with standard attributes snapshot 1`] = `
+<div>
+  No render component provided
 </div>
 `;

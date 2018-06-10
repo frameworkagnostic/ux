@@ -6,7 +6,7 @@ const isTruthy = (value) => {
 
 const OFF = 'off';
 const ERROR = 'error';
-const WARNING = 'warn';
+const WARNING = isTruthy(process.env.CI) ? ERROR : 'warn';
 
 module.exports = {
   "parser": "babel-eslint",

@@ -8,7 +8,7 @@ const inspect = require('../inspect');
 const webpackConfig = require('../../webpack.config');
 
 module.exports = (baseConfig, env) => {
-  baseConfig.module.rules = R.clone(webpackBaseConfig.module.rules);
+  //baseConfig.module.rules = R.clone(webpackBaseConfig.module.rules);
 
   webpackBaseConfig.plugins.forEach((plugin) => {
     baseConfig.plugins.push(plugin);
