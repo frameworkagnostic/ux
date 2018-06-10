@@ -2,9 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Link = (props) => {
+const BaseComponent = (props) => {
   const { Component, children, attrs } = props;
-  console.log(props);
   return (
     <Component {...attrs}>
       <span>
@@ -14,7 +13,7 @@ const Link = (props) => {
   );
 };
 
-Link.propTypes = {
+BaseComponent.propTypes = {
   children: PropTypes.node.isRequired,
   attrs: PropTypes.shape({
     href: PropTypes.string,
@@ -24,21 +23,15 @@ Link.propTypes = {
   className: PropTypes.string,
   classNames: PropTypes.objectOf(PropTypes.object),
   Component: PropTypes.node,
-  Components: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.node,
-    PropTypes.element,
-  ]),
 };
 
-Link.defaultProps = {
+BaseComponent.defaultProps = {
   attrs: null,
   style: {},
   inlineStyles: {},
   className: '',
   classNames: {},
   Component: 'a',
-  Components: null,
 };
 
-export { Link };
+export { BaseComponent };

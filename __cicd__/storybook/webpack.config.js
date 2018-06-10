@@ -3,14 +3,14 @@ const path = require('path');
 const R = require('ramda');
 const kindOf = require('kind-of');
 
-const webpackBaseConfig = require('../webpack-config/webpack-base.config.js')();
+const { webpackBaseConfig } = require('../webpack-config/webpack-base.config.js');
 const inspect = require('../inspect');
-const webpackConfig = require('../../webpack.config');
+const webpackConfig = webpackBaseConfig();
 
 module.exports = (baseConfig, env) => {
-  //baseConfig.module.rules = R.clone(webpackBaseConfig.module.rules);
+  baseConfig.module.rules = R.clone(webpackConfig.module.rules);
 
-  webpackBaseConfig.plugins.forEach((plugin) => {
+  webpackConfig.plugins.forEach((plugin) => {
     baseConfig.plugins.push(plugin);
   });
 

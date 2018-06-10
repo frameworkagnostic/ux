@@ -2,20 +2,20 @@
 import React from 'react';
 import { PropAttributes } from '@frameworkagnostic/ux-react-prop-attributes/lib/renderProp';
 
-import { Link } from './Link';
+import { Button } from './Button';
 
-export const name = 'Link';
+export const name = 'Buttons';
 
 export const examples = {
-  Standard2: () => (
+  Button: () => (
     <PropAttributes
       href="/"
       render={(props) => {
         const text = 'Hello';
         return (
-          <Link {...props}>
+          <Button {...props}>
             {text}
-          </Link>
+          </Button>
         );
       }}
     />

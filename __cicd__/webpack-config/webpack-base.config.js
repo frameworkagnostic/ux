@@ -10,7 +10,7 @@ const rules = [
   require('../webpack-loaders/scss'),
 ];
 
-module.exports = () => {
+const webpackBaseConfig = () => {
   return {
     node: false,
     target: 'web',
@@ -37,3 +37,5 @@ module.exports = () => {
     module: { rules: R.clone(rules) }
   };
 };
+
+module.exports = { webpackBaseConfig };
