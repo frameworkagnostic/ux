@@ -1,0 +1,10 @@
+node_modules
+.jest-cache
+.babelrc
+.eslintignore
+.eslintrc.js
+test-results
+package-lock.json
+__cicd__
+__mocks__
+*.stories.js*

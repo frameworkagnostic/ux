@@ -28,6 +28,7 @@ const tasks = fs.readdirSync(searchIn)
 		    `--out-dir`,
 		    dist,
 		    `--copy-files`,
+				'--source-maps',
 		    `--ignore`,
 		    `spec.,mock.,.stories.jsx`,
 		  ], {

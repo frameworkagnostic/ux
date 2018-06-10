@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import { MockComponent } from '../__mocks__/MockComponent';
-import { PropAttributes } from './renderProp';
+import { PropAttributes } from './PropAttributes';
 
 describe('<PropAttributes />', () => {
   test('validate element', () => expect(typeof PropAttributes).toBe('function'));

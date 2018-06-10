@@ -1,9 +1,9 @@
 
 import React from 'react';
 
-import { PropAttributes } from './renderProp';
+import { PropAttributes } from './PropAttributes';
 
-export const name = 'renderProp2';
+export const name = 'renderProp';
 
 export const examples = {
   Standard: () => <PropAttributes>Hello</PropAttributes>,

@@ -13,10 +13,10 @@ const findProjectDirectory = () => {
   	return fs.statSync(absolutePath).isDirectory();
   })
   .map(relativePath => {
-    const absolutePath = path.resolve(searchIn, relativePath);
-  	const src = path.join(__dirname, `../../packages/${relativePath}/src`);
-  	const dist = path.join(__dirname, `../../packages/${relativePath}/lib`);
-    const bundles = path.join(__dirname, `../../packages/${relativePath}/bundles`);
+    const absolutePath = path.resolve(searchIn, relativePath);    
+  	const src = path.join(searchIn, `${relativePath}/src`);
+  	const dist = path.join(searchIn, `${relativePath}/lib`);
+    const bundles = path.join(searchIn, `${relativePath}/bundles`);
 
   	return {
       absolutePath,

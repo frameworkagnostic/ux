@@ -1,0 +1,2 @@
+
+export { PropAttributes } from './PropAttributes';

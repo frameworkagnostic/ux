@@ -3,14 +3,14 @@ const R = require('ramda');
 const path = require('path');
 const { webpackBaseConfig } = require('./__cicd__/webpack-config/webpack-base.config.js');
 const { findProjectDirectory } = require('./__cicd__/find-project-directory');
+const inspect = require('./__cicd__/inspect.js');
 
 const projects = findProjectDirectory().map((paths) => {
   return {
     entry: {
-      main: [
-        path.join(__dirname, `./packages/${paths.projectName}/index.webpack.js`)
-      ]
+      main: ['./index.webpack.js']
     },
+    context: paths.projectRootDir,
     output: {
       path: paths.bundles,
     },

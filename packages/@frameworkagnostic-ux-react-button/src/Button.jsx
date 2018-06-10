@@ -6,7 +6,7 @@ import { BaseComponent } from './BaseComponent';
 const Button = (props) => {
   const {
     attrs,
-    href,
+    onClick,
     className,
     ...remainingProps
   } = props;
@@ -14,7 +14,7 @@ const Button = (props) => {
   return (<BaseComponent
     {...remainingProps}
     attrs={{
-      href,
+      onClick,
       className,
       ...attrs,
     }}
@@ -24,12 +24,12 @@ const Button = (props) => {
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   Component: PropTypes.node,
-  href: PropTypes.string,
   attrs: PropTypes.shape({
     onClick: PropTypes.func,
   }),
   style: PropTypes.objectOf(PropTypes.string),
-  className: PropTypes.string
+  className: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
@@ -37,7 +37,7 @@ Button.defaultProps = {
   style: {},
   className: '',
   Component: 'button',
-  href: ''
+  onClick: () => null
 };
 
 export { Button };
