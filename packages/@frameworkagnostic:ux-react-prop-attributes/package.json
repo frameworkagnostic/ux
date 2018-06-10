@@ -1,12 +1,11 @@
 {
   "name": "@frameworkagnostic/ux-react-prop-attributes",
-  "version": "0.1.0",
+  "version": "0.0.1-alpha.1",
   "main": "lib/index.js",
   "scripts": {},
   "dependencies": {
     "prop-types": "15.6.1"
   },
-  "devDependencies": { },
   "peerDependencies": {
     "react": "15.0.0 || ^16.0.0"
   }
