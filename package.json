@@ -15,6 +15,7 @@
     "storybook:start": "start-storybook -c ./__cicd__/storybook -p 5009",
     "storybook:build": "build-storybook -c ./__cicd__/storybook -o docs/interactive-demos",
     "registry": "npm config set registry https://registry.npmjs.org/",
+    "prepublish": "npm run test",
     "publish": "lerna publish"
   },
   "dependencies": {

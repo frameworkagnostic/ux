@@ -1,5 +1,6 @@
 
 import React from 'react';
+import {} from '@frameworkagnostic/ux-react-prop-attributes';
 
 import { Link } from './Link';
 
