@@ -2,7 +2,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const commonPropTypes = () => ({
+const PropAttributes = (props) => {
+  const {
+    attrs,
+    children,
+    ...remaining
+  } = props;
+
+  console.log('children', children);
+  if (!children) {
+    return <div>No renderProp provided</div>;
+  }
+
+  return React.cloneElement(children, attrs ? {
+    attrs,
+    style: remaining.style,
+    inlineStyles: remaining.inlineStyles,
+    className: remaining.className,
+    classNames: remaining.classNames,
+    Component: remaining.Component,
+    Components: remaining.Components,
+  } : {
+    attrs: remaining,
+  });
+};
+
+PropAttributes.propTypes = {
   children: PropTypes.oneOf([
     PropTypes.node,
     PropTypes.element,
@@ -22,9 +47,9 @@ export const commonPropTypes = () => ({
     PropTypes.node,
     PropTypes.element,
   ]),
-});
+};
 
-export const commonDefaultProps = () => ({
+PropAttributes.defaultProps = {
   attrs: null,
   style: {},
   inlineStyles: {},
@@ -32,18 +57,6 @@ export const commonDefaultProps = () => ({
   classNames: {},
   Component: null,
   Components: null,
-});
+};
 
-export const appendPropTypes = (Component, extendDefaultProps = {}, extendPropTypes = {}) => {
-  Component.defaultProps = Object.assign(
-    commonDefaultProps(),
-    extendDefaultProps,
-  );
-
-  Component.propTypes = Object.assign(
-    commonPropTypes(),
-    extendPropTypes,
-  );
-
-  return Component;
-}
+export { PropAttributes };

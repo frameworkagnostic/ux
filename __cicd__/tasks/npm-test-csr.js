@@ -39,6 +39,8 @@ if(argv.debug) {
   args.push('--debug');
 }
 
+args.push('--updateSnapshot');
+
 module.exports = {
 	title: 'Run Jest JSDOM tests',
 	task: () => cliRun(args, getCwd())

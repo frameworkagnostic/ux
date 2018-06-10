@@ -26,13 +26,8 @@ const parseModule = (data) => {
 
 const loadStories = () => {
   create({
-    group: 'base-components',
-    context: require.context('../../src/', true, /.stories.jsx?$/)
-  }).stories.forEach(parseModule);
-
-  create({
-    group: 'base-components',
-    context: require.context('../../migration/', true, /.stories.jsx?$/)
+    group: 'packages',
+    context: require.context('../../packages/', true, /.stories.jsx?$/)
   }).stories.forEach(parseModule);
 };
 

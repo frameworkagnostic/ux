@@ -6,3 +6,5 @@ __docs__/
 __mocks__/
 webpack.config.js
 webpack-dev-server.config.js
+*node_modules*
+node_modules

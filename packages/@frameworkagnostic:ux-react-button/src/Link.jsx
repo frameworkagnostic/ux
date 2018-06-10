@@ -1,31 +1,22 @@
 
 import React from 'react';
-import { appendPropTypes } from './utils/propTypeMeta';
 import PropTypes from 'prop-types';
 
-const PropAttributes = (props) => {
-  const {
-    attrs,
-    children,
-    renderProp,
-    ...remaining,
-  } = props;
+const Link = (props) => {
+  const { Component, children, attrs } = props;
 
-  return renderProp(attrs ? {
-    attrs,
-    style: remaining.style,
-    inlineStyles: remaining.inlineStyles,
-    className: remaining.className,
-    classNames: remaining.classNames,
-    Component: remaining.Component,
-    Components: remaining.Components,
-  } : {
-    attrs: remaining
-  });
+  return (
+    <Component {...attrs}>
+      <span>
+        {children}
+      </span>
+    </Component>
+  );
 };
 
-PropAttributes.propTypes = {
+Link.propTypes = {
   children: PropTypes.oneOf([
+    PropTypes.string,
     PropTypes.node,
     PropTypes.element,
   ]).isRequired,
@@ -44,20 +35,16 @@ PropAttributes.propTypes = {
     PropTypes.node,
     PropTypes.element,
   ]),
-  renderProp: PropTypes.func,
 };
 
-PropAttributes.defaultProps = {
+Link.defaultProps = {
   attrs: null,
   style: {},
   inlineStyles: {},
   className: '',
   classNames: {},
-  Component: null,
+  Component: 'a',
   Components: null,
-  renderProp: () => (
-    <div>No renderProp provided</div>
-  ),
 };
 
-export { PropAttributes };
+export { Link };

@@ -14,10 +14,11 @@
     "test": "DEBUG=*ux* node ./__cicd__/npm-run/test.js && lerna run test",
     "storybook:start": "start-storybook -c ./__cicd__/storybook -p 5009",
     "storybook:build": "build-storybook -c ./__cicd__/storybook -o docs/interactive-demos",
-    "registry": "npm config set registry https://registry.npmjs.org/"
+    "registry": "npm config set registry https://registry.npmjs.org/",
+    "publish": "lerna publish"
   },
   "dependencies": {
-    "prop-types": "15.6.1"
+    "prop-types": "^15.6.1"
   },
   "publishConfig": {
     "access": "public"
@@ -30,6 +31,7 @@
     "autoprefixer": "8.6.0",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
+    "babel-eslint": "^8.2.3",
     "babel-jest": "22.4.3",
     "babel-plugin-module-resolver": "3.1.1",
     "babel-plugin-syntax-dynamic-import": "6.18.0",
@@ -45,6 +47,11 @@
     "enzyme-adapter-react-16": "1.1.1",
     "enzyme-to-json": "3.3.3",
     "eslint": "4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jest": "^21.17.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
     "execa": "0.10.0",
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "1.1.11",
@@ -65,11 +72,12 @@
     "postcss-loader": "2.1.5",
     "ramda": "0.25.0",
     "raw-loader": "0.5.1",
-    "react": "16.3.2",
+    "react": "^16.3.2",
     "react-dom": "16.3.2",
     "react-test-renderer": "16.3.2",
     "rxjs-compat": "6.2.0",
     "sort-css-media-queries": "1.3.4",
+    "strip-ansi": "^4.0.0",
     "style-loader": "0.21.0",
     "to-string-loader": "1.1.5",
     "transfer-webpack-plugin": "0.1.4",

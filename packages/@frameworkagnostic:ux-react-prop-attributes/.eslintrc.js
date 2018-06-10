@@ -6,7 +6,7 @@ const isTruthy = (value) => {
 
 const OFF = 'off';
 const ERROR = 'error';
-const WARNING = isTruthy(process.env.CI) ? ERROR : 'warn';
+const WARNING = 'warn';
 
 module.exports = {
   "parser": "babel-eslint",
@@ -17,6 +17,7 @@ module.exports = {
   },
   "extends": "airbnb",
   "rules": {
+    "comma-dangle": 0,
     "import/order": [ERROR, {
       "groups": [
         "builtin", "external", "parent", "sibling", "index",
@@ -24,7 +25,7 @@ module.exports = {
     }],
     "import/no-useless-path-segments": [ERROR],
     "import/no-duplicates": [ERROR],
-    "import/no-extraneous-dependencies": ["error", {
+    "import/no-extraneous-dependencies": [WARNING, {
       "devDependencies": true,
       "optionalDependencies": false,
       "peerDependencies": true
