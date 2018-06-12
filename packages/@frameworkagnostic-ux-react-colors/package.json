@@ -1,6 +1,6 @@
 {
   "name": "@frameworkagnostic/ux-react-color",
-  "version": "0.0.1-alpha.8",
+  "version": "0.0.1-alpha.9",
   "main": "lib/index.js",
   "scripts": {
     "test": "DEBUG=*ux* node ../../__cicd__/npm-run/test.js"
@@ -9,6 +9,6 @@
     "react": "15.0.0 || ^16.0.0"
   },
   "devDependencies": {
-    "@frameworkagnostic/ux-react-prop-attributes": "^0.0.1-alpha.8"
+    "@frameworkagnostic/ux-react-prop-attributes": "^0.0.1-alpha.9"
   }
 }

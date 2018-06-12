@@ -1,5 +1,5 @@
 {
-  "name": "@frameworkagnostic/ux-react-with-styles",
+  "name": "@frameworkagnostic/ux-react-grid",
   "version": "0.0.1-alpha.9",
   "main": "lib/index.js",
   "scripts": {
@@ -7,8 +7,8 @@
     "storybook:start": "node ../../__cicd__/npm-run/storybook.js"
   },
   "dependencies": {
-    "@frameworkagnostic/ux-react-color": "^0.0.1-alpha.9",
-    "prop-types": "15.6.1"
+    "@frameworkagnostic/ux-react-with-styles": "^0.0.1-alpha.9",
+    "prop-types": "15.x"
   },
   "peerDependencies": {
     "react": "15.0.0 || ^16.0.0"
