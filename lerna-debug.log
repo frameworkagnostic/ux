@@ -14,31 +14,33 @@
 9 silly getExecOpts { cwd: '/projects/frameworkagnostic/ux/packages/@frameworkagnostic-ux-react-colors' }
 10 silly runScriptInDir test [] @frameworkagnostic-ux-react-with-styles
 11 silly getExecOpts { cwd: '/projects/frameworkagnostic/ux/packages/@frameworkagnostic-ux-react-with-styles' }
-12 error test Errored while running script in '@frameworkagnostic/ux-react-utils'
-13 error execute callback with error
-14 error Error: Command failed: npm run test
-14 error npm ERR! code ELIFECYCLE
-14 error npm ERR! errno 1
-14 error npm ERR! @frameworkagnostic/ux-react-utils@0.0.1-alpha.6 test: `DEBUG=*ux* node ../../__cicd__/npm-run/test.js`
-14 error npm ERR! Exit status 1
-14 error npm ERR!
-14 error npm ERR! Failed at the @frameworkagnostic/ux-react-utils@0.0.1-alpha.6 test script.
-14 error npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
-14 error
-14 error npm ERR! A complete log of this run can be found in:
-14 error npm ERR!     /Users/rcmarte/.npm/_logs/2018-06-12T04_47_48_034Z-debug.log
-14 error
-14 error > @frameworkagnostic/ux-react-utils@0.0.1-alpha.6 test /projects/frameworkagnostic/ux/packages/@frameworkagnostic-ux-react-colors
-14 error > DEBUG=*ux* node ../../__cicd__/npm-run/test.js
-14 error
-14 error [?25l[00:47:47] Run Jest Node tests [started]
-14 error No tests found
-14 error In /projects/frameworkagnostic/ux/packages/@frameworkagnostic-ux-react-colors
-14 error   48 files checked.
-14 error   testMatch:  - 48 matches
-14 error   testPathIgnorePatterns: /node_modules/ - 48 matches
-14 error   testRegex: (.*).spec.jsx?$ - 0 matches
-14 error Pattern: |(.*).spec.jsx?$ - 0 matches
-14 error
-14 error     at Promise.all.then.arr (/projects/frameworkagnostic/ux/node_modules/lerna/node_modules/execa/index.js:236:11)
-14 error     at <anonymous>
+12 silly runScriptInDir test [] @frameworkagnostic-ux-react-grid
+13 silly getExecOpts { cwd: '/projects/frameworkagnostic/ux/packages/@frameworkagnostic-ux-react-grid' }
+14 error test Errored while running script in '@frameworkagnostic/ux-react-grid'
+15 error execute callback with error
+16 error Error: Command failed: npm run test
+16 error npm ERR! code ELIFECYCLE
+16 error npm ERR! errno 1
+16 error npm ERR! @frameworkagnostic/ux-react-grid@0.0.1-alpha.8 test: `DEBUG=*ux* node ../../__cicd__/npm-run/test.js`
+16 error npm ERR! Exit status 1
+16 error npm ERR!
+16 error npm ERR! Failed at the @frameworkagnostic/ux-react-grid@0.0.1-alpha.8 test script.
+16 error npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+16 error
+16 error npm ERR! A complete log of this run can be found in:
+16 error npm ERR!     /Users/rcmarte/.npm/_logs/2018-06-12T12_44_39_065Z-debug.log
+16 error
+16 error > @frameworkagnostic/ux-react-grid@0.0.1-alpha.8 test /projects/frameworkagnostic/ux/packages/@frameworkagnostic-ux-react-grid
+16 error > DEBUG=*ux* node ../../__cicd__/npm-run/test.js
+16 error
+16 error [?25l[08:44:38] Run Jest Node tests [started]
+16 error No tests found
+16 error In /projects/frameworkagnostic/ux/packages/@frameworkagnostic-ux-react-grid
+16 error   16 files checked.
+16 error   testMatch:  - 16 matches
+16 error   testPathIgnorePatterns: /node_modules/ - 16 matches
+16 error   testRegex: (.*).spec.jsx?$ - 0 matches
+16 error Pattern: |(.*).spec.jsx?$ - 0 matches
+16 error
+16 error     at Promise.all.then.arr (/projects/frameworkagnostic/ux/node_modules/lerna/node_modules/execa/index.js:236:11)
+16 error     at <anonymous>

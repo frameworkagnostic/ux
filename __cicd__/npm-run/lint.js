@@ -7,7 +7,7 @@ const { argv } = require('yargs');
 const eslint = require('../tasks/eslint');
 
 const tasks = new Listr([
-  eslint,
+  //eslint,
 ]);
 
 tasks.run().catch(err => {

@@ -8,7 +8,6 @@ import { keys as breakpointKeys } from './createBreakpoints';
 
 test('withStyles', () => {
   const Grid = ({ classes }) => <div>Hello</div>;
-  const gutter = generateGutter('xs');
 
   const styles = theme => {
     expect(typeof theme).toBe('object');
@@ -23,7 +22,7 @@ test('withStyles', () => {
         boxSizing: 'border-box',
         margin: '0',
       },
-      ...gutter,
+      ...generateGutter('xs'),
       ...breakpointKeys.reduce((accumulator, key) => {
         // Use side effect over immutability for better performance.
         generateGrid(accumulator, theme, key);
