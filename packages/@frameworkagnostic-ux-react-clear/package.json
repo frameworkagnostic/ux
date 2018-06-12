@@ -1,6 +1,6 @@
 {
   "name": "@frameworkagnostic/ux-react-clear",
-  "version": "0.0.1-alpha.7",
+  "version": "0.0.1-alpha.8",
   "main": "lib/index.js",
   "scripts": {},
   "dependencies": {
@@ -10,6 +10,6 @@
     "react": "15.0.0 || ^16.0.0"
   },
   "devDependencies": {
-    "@frameworkagnostic/ux-react-prop-attributes": "^0.0.1-alpha.7"
+    "@frameworkagnostic/ux-react-prop-attributes": "^0.0.1-alpha.8"
   }
 }

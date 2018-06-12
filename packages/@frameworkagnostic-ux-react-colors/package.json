@@ -1,19 +1,14 @@
 {
   "name": "@frameworkagnostic/ux-react-color",
-  "version": "0.0.1-alpha.7",
+  "version": "0.0.1-alpha.8",
   "main": "lib/index.js",
   "scripts": {
     "test": "DEBUG=*ux* node ../../__cicd__/npm-run/test.js"
-  },
-  "dependencies": {
-    "deepmerge": "^2.1.1",
-    "prop-types": "15.6.1",
-    "warning": "^4.0.1"
   },
   "peerDependencies": {
     "react": "15.0.0 || ^16.0.0"
   },
   "devDependencies": {
-    "@frameworkagnostic/ux-react-prop-attributes": "^0.0.1-alpha.7"
+    "@frameworkagnostic/ux-react-prop-attributes": "^0.0.1-alpha.8"
   }
 }

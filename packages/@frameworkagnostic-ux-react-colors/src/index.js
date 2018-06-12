@@ -1,2 +1,4 @@
 
-export * as colorValues from './color-values/index';
+import * as colorValues from './color-values/index';
+
+export { colorValues };
