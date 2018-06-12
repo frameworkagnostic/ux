@@ -4,25 +4,25 @@ import PropTypes from 'prop-types';
 
 const BenifitListItemImage = (props) => {
   const {
-    src,
+    imageSrc,
     alt,
     styles,
     classNames
   } = props;
 
-  if (!src) {
+  if (!imageSrc) {
     return null;
   }
 
   return (
     <div className={classNames.imageContainer} style={styles.imageContainer}>
-      <img className={classNames.image} style={styles.image} src={src} alt={alt} />
+      <img className={classNames.image} style={styles.image} src={imageSrc} alt={alt} />
     </div>
   );
 };
 
 BenifitListItemImage.propTypes = {
-  src: PropTypes.string.isRequired,
+  imageSrc: PropTypes.string.isRequired,
   alt: PropTypes.string,
   styles: PropTypes.objectOf(PropTypes.object),
   classNames: PropTypes.objectOf(PropTypes.object),

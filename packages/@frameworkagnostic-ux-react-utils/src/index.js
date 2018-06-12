@@ -1,0 +1,2 @@
+
+export { generateGrid } from './generateGrid';

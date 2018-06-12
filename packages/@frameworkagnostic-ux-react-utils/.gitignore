@@ -1,0 +1,11 @@
+
+*.local*
+
+node_modules
+.jest-cache
+package-lock.json
+
+/test-results
+/dist
+/lib
+/bundles
