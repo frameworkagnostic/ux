@@ -17,8 +17,10 @@ module.exports = {
   },
   "extends": "airbnb",
   "rules": {
+    "no-mixed-operators": [WARNING],
     "comma-dangle": 0,
     "react/jsx-closing-bracket-location": 0,
+    "arrow-parens": [ERROR, 'always'],
     "import/order": [ERROR, {
       "groups": [
         "builtin", "external", "parent", "sibling", "index",

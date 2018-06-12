@@ -10,3 +10,6 @@ package-lock.json
 /dist
 /lib
 /bundles
+/packages/**/lib
+/packages/**/bundles
+/packages/**/dist

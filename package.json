@@ -18,6 +18,13 @@
     "publish": "lerna publish"
   },
   "dependencies": {
+    "deepmerge": "^2.1.1",
+    "jss-camel-case": "^6.1.0",
+    "jss-default-unit": "^8.0.2",
+    "jss-global": "^3.0.0",
+    "jss-nested": "^6.0.1",
+    "jss-props-sort": "^6.0.0",
+    "jss-vendor-prefixer": "^8.0.0",
     "prop-types": "^15.6.1"
   },
   "publishConfig": {
