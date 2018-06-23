@@ -34,5 +34,7 @@ test('generateGutter xs', () => {
   expect(Object.keys(breakpointXsStyles).sort()).toEqual(
     expect.arrayContaining(Object.keys(styles).sort()),
   );
+  
+  expect(styles).toMatchSnapshot();
 
 });

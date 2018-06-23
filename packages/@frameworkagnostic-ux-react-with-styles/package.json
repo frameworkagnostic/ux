@@ -4,16 +4,19 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "DEBUG=*ux* node ../../__cicd__/npm-run/test.js",
+    "pretest": "JEST_RUNNER_SPEC_REGEX=(.*)\\.spec-generate\\.jsx?$ DEBUG=*ux* node ../../__cicd__/npm-run/test.js",
     "storybook:start": "node ../../__cicd__/npm-run/storybook.js"
   },
   "dependencies": {
-    "@frameworkagnostic/ux-react-color": "^0.0.1-alpha.9",
+    "@frameworkagnostic/ux-react-color": "0.0.1-alpha.9",
+    "classnames": "^2.2.6",
     "prop-types": "15.6.1"
   },
   "peerDependencies": {
     "react": "15.0.0 || ^16.0.0"
   },
   "devDependencies": {
-    "@frameworkagnostic/ux-react-prop-attributes": "^0.0.1-alpha.9"
+    "@frameworkagnostic/ux-react-prop-attributes": "0.0.1-alpha.9",
+    "mkdirp": "0.5.1"
   }
 }

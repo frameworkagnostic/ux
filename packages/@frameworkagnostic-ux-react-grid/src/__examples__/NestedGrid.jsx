@@ -11,17 +11,17 @@ const styles = (theme) => ({
   paper: {
     padding: theme.spacing.unit * 2,
     textAlign: 'center',
-    color: theme.palette.text.secondary,
-
+    backgroundColor: 'blue',
+        border: '1px solid red',
   },
 });
 
-export function FullWidthGrid(props) {
+export function NestedGrid(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
-      <Grid container spacing={24}>
+    <div className={classes.paper}>
+      <Grid container spacing={24} className={classes.root}>
         <Grid item xs={12}>
           <div className={classes.paper}>xs=12</div>
         </Grid>
@@ -48,8 +48,8 @@ export function FullWidthGrid(props) {
   );
 }
 
-FullWidthGrid.propTypes = {
+NestedGrid.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export const FullWidthGridStyled = withStyles(styles)(FullWidthGrid);
+export const NestedGridStyled = withStyles(styles)(NestedGrid);

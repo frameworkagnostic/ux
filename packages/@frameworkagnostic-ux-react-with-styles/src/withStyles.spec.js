@@ -1,11 +1,15 @@
 
+
 import React from 'react';
 import renderer from 'react-test-renderer';
+import * as logger from '__tests__/utils/syslog';
 import { withStyles } from './withStyles';
 import { generateGutter } from './generateGutter';
 import { generateGridReducer } from './generateGrid';
-import { keys as breakpointKeys } from './createBreakpoints';
+import { keys as breakpointKeys, createBreakpoints } from './createBreakpoints';
 import { GRID_SIZES, GUTTERS } from './constants';
+
+import { withStylesMock } from '../__mocks__/with-style-grids.mock';
 
 test('withStyles', () => {
   const Grid = ({ classes }) => <div>Hello</div>;

@@ -20,10 +20,6 @@ const GUTTERS = [0, 8, 16, 24, 32, 40];
 const GRID_SIZES = ['auto', true, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 function generateGrid(globalStyles, theme, breakpoint) {
-  console.log('globalStyles', globalStyles);
-  console.log('breakpoint', breakpoint);
-  console.log('theme.breakpoints.up', theme.breakpoints.up(breakpoint));
-
   const styles = {};
 
   GRID_SIZES.forEach(size => {

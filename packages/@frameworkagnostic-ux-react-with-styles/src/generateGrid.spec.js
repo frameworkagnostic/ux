@@ -21,5 +21,7 @@ test('create breakpoint keys', () => {
       return acc;
     }, {})),
   );
+  
+  expect(styles).toMatchSnapshot();
 
 });

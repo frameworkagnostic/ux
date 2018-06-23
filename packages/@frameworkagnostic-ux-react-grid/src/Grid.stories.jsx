@@ -7,6 +7,7 @@ import Grid from './Grid';
 import { FullWidthGridStyled } from './__examples__/FullWidthGrid';
 import { GuttersGridStyled } from './__examples__/GuttersGrid';
 import { FlexGridStyled } from './__examples__/FlexGrid';
+import { NestedGridStyled } from './__examples__/NestedGrid';
 
 
 export const name = 'Grid';
@@ -30,4 +31,5 @@ export const examples = {
       </div>
     </div>
   ),
+  'NestedGridStyled': () => (<NestedGridStyled />),
 };
