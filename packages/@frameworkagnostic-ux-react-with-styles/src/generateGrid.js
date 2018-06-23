@@ -1,5 +1,5 @@
 
-export function generateGrid(globalStyles, gridSizes, nextBreakpointUp, breakpoint) {
+export function generateGrid(gridSizes, nextBreakpointUp, breakpoint) {
   const styles = {};
 
   gridSizes.forEach((size) => {
@@ -36,18 +36,25 @@ export function generateGrid(globalStyles, gridSizes, nextBreakpointUp, breakpoi
     };
   });
 
-  // No need for a media query for the first size.
-  if (breakpoint === 'xs') {
-    return {
-      ...globalStyles,
-      ...styles,
-    }
-  } else {
-    return {
-      ...globalStyles,
-      ...{
-        [nextBreakpointUp(breakpoint)]: styles
-      },
-    }
-  }
+  return styles;
 }
+
+export const generateGridReducer = (gridSizes, nextBreakpointUp) => {
+  return (accumulator, breakpoint) => {
+    const styles = generateGrid(gridSizes, nextBreakpointUp, breakpoint);
+
+    if (breakpoint === 'xs') {
+      return {
+        ...accumulator,
+        ...styles,
+      }
+    } else {
+      return {
+        ...accumulator,
+        ...{
+          [nextBreakpointUp(breakpoint)]: styles
+        },
+      }
+    }
+  };
+};

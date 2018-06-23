@@ -1,7 +1,5 @@
 
-import { GUTTERS } from './constants';
-
-export const generateGutter = (breakpoint, gutters = GUTTERS) => {
+export const generateGutter = (breakpoint, gutters) => {
   const styles = {};
 
   gutters.forEach((spacing, index) => {

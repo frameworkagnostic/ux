@@ -3,9 +3,9 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { withStyles } from './withStyles';
 import { generateGutter } from './generateGutter';
-import { generateGrid } from './generateGrid';
+import { generateGridReducer } from './generateGrid';
 import { keys as breakpointKeys } from './createBreakpoints';
-import { GRID_SIZES } from './constants';
+import { GRID_SIZES, GUTTERS } from './constants';
 
 test('withStyles', () => {
   const Grid = ({ classes }) => <div>Hello</div>;
@@ -23,12 +23,8 @@ test('withStyles', () => {
         boxSizing: 'border-box',
         margin: '0',
       },
-      ...generateGutter('xs'),
-      ...breakpointKeys.reduce((accumulator, key) => {
-        // Use side effect over immutability for better performance.
-        return generateGrid(accumulator, GRID_SIZES, theme.breakpoints.up, key);
-        return accumulator;
-      }, {}),
+      ...generateGutter('xs', GUTTERS),
+      ...breakpointKeys.reduce(generateGridReducer(GRID_SIZES, theme.breakpoints.up), {}),
     };
   };
 

@@ -13,7 +13,6 @@ import themeListener from './themeListener';
 import createGenerateClassName from './createGenerateClassName';
 import getStylesCreator from './getStylesCreator';
 import { getThemeProps } from './getThemeProps';
-import { generateGutter } from './generateGutter';
 
 // Default JSS instance.
 const jss = create(jssPreset());

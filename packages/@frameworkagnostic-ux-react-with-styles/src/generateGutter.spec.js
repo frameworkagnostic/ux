@@ -1,9 +1,10 @@
 
 import { generateGutter } from './generateGutter';
 import { breakpointXsStyles } from '../__mocks__/generate-gutter.mock';
+import { GUTTERS } from './constants';
 
 test('generateGutter xs', () => {
-  const styles = generateGutter('xs');
+  const styles = generateGutter('xs', GUTTERS);
 
   expect(styles).toEqual(
     expect.objectContaining([
