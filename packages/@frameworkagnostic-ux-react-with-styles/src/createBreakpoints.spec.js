@@ -1,14 +1,22 @@
 
+import * as logger from '__tests__/utils/syslog';
+import {
+  breakpointKeysMock,
+  nextBreakpointMock,
+} from '../__mocks__/breakpoint-keys.mocks';
+
 import { keys as breakpointKeys, createBreakpoints } from './createBreakpoints';
-import { generateGrid } from './generateGrid';
 
 test('create breakpoint keys', () => {
-  const keys = breakpointKeys.reduce((accumulator, key) => {
-    const theme = {
-      breakpoints: createBreakpoints()
-    };
-    generateGrid(accumulator, theme, key);
-    return accumulator;
-  }, {});
-  expect(typeof keys).toBe('object');
+  expect(typeof createBreakpoints).toBe('function');
+
+  const breakpoints = createBreakpoints();
+
+  expect(breakpointKeys.sort()).toEqual(
+    expect.arrayContaining(breakpointKeysMock.sort()),
+  );
+
+  breakpointKeysMock.forEach((breakpoint) => {
+    expect(nextBreakpointMock[breakpoint]).toEqual(breakpoints.up(breakpoint));
+  });
 });

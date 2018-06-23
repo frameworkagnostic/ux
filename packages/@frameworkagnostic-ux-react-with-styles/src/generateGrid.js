@@ -1,9 +1,13 @@
 
+import {
+  GUTTERS as gutters,
+  GRID_SIZES as gridSizes,
+} from './constants';
 
-export const GUTTERS = [0, 8, 16, 24, 32, 40];
-export const GRID_SIZES = ['auto', true, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+export const GUTTERS = gutters;
+export const GRID_SIZES = gridSizes;
 
-export function generateGrid(globalStylesArg, theme, breakpoint) {
+export function generateGrid(globalStylesArg, nextBreakpointUp, breakpoint) {
   const styles = {};
   const globalStyles = globalStylesArg;
 
@@ -45,6 +49,8 @@ export function generateGrid(globalStylesArg, theme, breakpoint) {
   if (breakpoint === 'xs') {
     Object.assign(globalStyles, styles);
   } else {
-    globalStyles[theme.breakpoints.up(breakpoint)] = styles;
+    globalStyles[nextBreakpointUp(breakpoint)] = styles;
   }
+  
+  return globalStyles;
 }

@@ -20,6 +20,10 @@ const GUTTERS = [0, 8, 16, 24, 32, 40];
 const GRID_SIZES = ['auto', true, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 function generateGrid(globalStyles, theme, breakpoint) {
+  console.log('globalStyles', globalStyles);
+  console.log('breakpoint', breakpoint);
+  console.log('theme.breakpoints.up', theme.breakpoints.up(breakpoint));
+
   const styles = {};
 
   GRID_SIZES.forEach(size => {
@@ -64,7 +68,7 @@ function generateGrid(globalStyles, theme, breakpoint) {
   }
 }
 
-function generateGutter(theme, breakpoint) {
+function generateGutter(breakpoint) {
   const styles = {};
 
   GUTTERS.forEach((spacing, index) => {
@@ -91,81 +95,84 @@ function generateGutter(theme, breakpoint) {
 // alignItems: 'flex-start',
 // flexWrap: 'nowrap',
 // justifyContent: 'flex-start',
-export const styles = theme => ({
-  container: {
-    boxSizing: 'border-box',
-    display: 'flex',
-    flexWrap: 'wrap',
-    width: '100%',
-  },
-  item: {
-    boxSizing: 'border-box',
-    margin: '0', // For instance, it's useful when used with a `figure` element.
-  },
-  zeroMinWidth: {
-    minWidth: 0,
-  },
-  'direction-xs-column': {
-    flexDirection: 'column',
-  },
-  'direction-xs-column-reverse': {
-    flexDirection: 'column-reverse',
-  },
-  'direction-xs-row-reverse': {
-    flexDirection: 'row-reverse',
-  },
-  'wrap-xs-nowrap': {
-    flexWrap: 'nowrap',
-  },
-  'wrap-xs-wrap-reverse': {
-    flexWrap: 'wrap-reverse',
-  },
-  'align-items-xs-center': {
-    alignItems: 'center',
-  },
-  'align-items-xs-flex-start': {
-    alignItems: 'flex-start',
-  },
-  'align-items-xs-flex-end': {
-    alignItems: 'flex-end',
-  },
-  'align-items-xs-baseline': {
-    alignItems: 'baseline',
-  },
-  'align-content-xs-center': {
-    alignContent: 'center',
-  },
-  'align-content-xs-flex-start': {
-    alignContent: 'flex-start',
-  },
-  'align-content-xs-flex-end': {
-    alignContent: 'flex-end',
-  },
-  'align-content-xs-space-between': {
-    alignContent: 'space-between',
-  },
-  'align-content-xs-space-around': {
-    alignContent: 'space-around',
-  },
-  'justify-xs-center': {
-    justifyContent: 'center',
-  },
-  'justify-xs-flex-end': {
-    justifyContent: 'flex-end',
-  },
-  'justify-xs-space-between': {
-    justifyContent: 'space-between',
-  },
-  'justify-xs-space-around': {
-    justifyContent: 'space-around',
-  },
-  ...generateGutter(theme, 'xs'),
-  ...breakpointKeys.reduce((accumulator, key) => {
-    // Use side effect over immutability for better performance.
-    generateGrid(accumulator, theme, key);
-    return accumulator;
-  }, {}),
-});
+export const styles = theme => {
+  console.log('breakpointKeys', breakpointKeys);
+  return {
+    container: {
+      boxSizing: 'border-box',
+      display: 'flex',
+      flexWrap: 'wrap',
+      width: '100%',
+    },
+    item: {
+      boxSizing: 'border-box',
+      margin: '0', // For instance, it's useful when used with a `figure` element.
+    },
+    zeroMinWidth: {
+      minWidth: 0,
+    },
+    'direction-xs-column': {
+      flexDirection: 'column',
+    },
+    'direction-xs-column-reverse': {
+      flexDirection: 'column-reverse',
+    },
+    'direction-xs-row-reverse': {
+      flexDirection: 'row-reverse',
+    },
+    'wrap-xs-nowrap': {
+      flexWrap: 'nowrap',
+    },
+    'wrap-xs-wrap-reverse': {
+      flexWrap: 'wrap-reverse',
+    },
+    'align-items-xs-center': {
+      alignItems: 'center',
+    },
+    'align-items-xs-flex-start': {
+      alignItems: 'flex-start',
+    },
+    'align-items-xs-flex-end': {
+      alignItems: 'flex-end',
+    },
+    'align-items-xs-baseline': {
+      alignItems: 'baseline',
+    },
+    'align-content-xs-center': {
+      alignContent: 'center',
+    },
+    'align-content-xs-flex-start': {
+      alignContent: 'flex-start',
+    },
+    'align-content-xs-flex-end': {
+      alignContent: 'flex-end',
+    },
+    'align-content-xs-space-between': {
+      alignContent: 'space-between',
+    },
+    'align-content-xs-space-around': {
+      alignContent: 'space-around',
+    },
+    'justify-xs-center': {
+      justifyContent: 'center',
+    },
+    'justify-xs-flex-end': {
+      justifyContent: 'flex-end',
+    },
+    'justify-xs-space-between': {
+      justifyContent: 'space-between',
+    },
+    'justify-xs-space-around': {
+      justifyContent: 'space-around',
+    },
+    ...generateGutter('xs'),
+    ...breakpointKeys.reduce((accumulator, key) => {
+      // Use side effect over immutability for better performance.
+      generateGrid(accumulator, theme, key);
+      return accumulator;
+    }, {}),
+  };
+};
 
 function Grid(props) {
   const {

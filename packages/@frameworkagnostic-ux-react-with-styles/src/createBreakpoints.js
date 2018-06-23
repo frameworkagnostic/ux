@@ -1,21 +1,23 @@
 // Sorted ASC by size. That's important.
 // It can't be configured as it's used statically for propTypes.
-export const keys = ['xs', 'sm', 'md', 'lg', 'xl'];
+
+import {
+  breakpointKeys,
+  breakpointValues,
+  breakpointUnit,
+  breakpointStep
+} from './constants';
+
+export const keys = breakpointKeys;
 
 // Keep in mind that @media is inclusive by the CSS specification.
 export function createBreakpoints(breakpoints = {}) {
   const {
     // The breakpoint **start** at this value.
     // For instance with the first breakpoint xs: [xs, sm[.
-    values = {
-      xs: 0,
-      sm: 600,
-      md: 960,
-      lg: 1280,
-      xl: 1920,
-    },
-    unit = 'px',
-    step = 5,
+    values = breakpointValues,
+    unit = breakpointUnit,
+    step = breakpointStep,
     ...other
   } = breakpoints;
 

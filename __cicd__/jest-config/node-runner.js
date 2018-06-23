@@ -8,6 +8,10 @@ const CWD = process.env.JEST_RUNNER_CWD;
 const jestConfig = {
   bail: false,
   testEnvironment: 'node',
+  modulePaths: [
+    process.cwd(),
+    path.join(__dirname, '../../'),
+  ],
   "setupFiles": [],
   "verbose": true,
   "testRegex": process.env.JEST_RUNNER_SPEC_REGEX,

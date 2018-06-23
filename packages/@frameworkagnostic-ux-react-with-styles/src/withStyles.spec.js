@@ -25,7 +25,7 @@ test('withStyles', () => {
       ...generateGutter('xs'),
       ...breakpointKeys.reduce((accumulator, key) => {
         // Use side effect over immutability for better performance.
-        generateGrid(accumulator, theme, key);
+        return generateGrid(accumulator, theme.breakpoints.up, key);
         return accumulator;
       }, {}),
     };

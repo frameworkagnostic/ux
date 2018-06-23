@@ -13,3 +13,5 @@ package-lock.json
 /packages/**/lib
 /packages/**/bundles
 /packages/**/dist
+stdout.log
+stderr.log

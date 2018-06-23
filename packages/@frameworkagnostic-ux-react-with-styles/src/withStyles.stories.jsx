@@ -26,7 +26,7 @@ const styles = (theme) => ({
   ...generateGutter('xs'),
   ...breakpointKeys.reduce((accumulator, key) => {
     // Use side effect over immutability for better performance.
-    generateGrid(accumulator, theme, key);
+    generateGrid(accumulator, theme.breakpoints.up, key);
     return accumulator;
   }, {}),
 });

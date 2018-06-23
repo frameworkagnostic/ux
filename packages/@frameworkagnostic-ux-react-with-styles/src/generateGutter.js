@@ -1,10 +1,10 @@
 
 import { GUTTERS } from './constants';
 
-export function generateGutter(breakpoint) {
+export const generateGutter = (breakpoint, gutters = GUTTERS) => {
   const styles = {};
 
-  GUTTERS.forEach((spacing, index) => {
+  gutters.forEach((spacing, index) => {
     if (index === 0) {
       // Skip the default style.
       return;
