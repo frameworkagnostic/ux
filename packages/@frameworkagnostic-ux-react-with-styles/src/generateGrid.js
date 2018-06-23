@@ -1,17 +1,8 @@
 
-import {
-  GUTTERS as gutters,
-  GRID_SIZES as gridSizes,
-} from './constants';
-
-export const GUTTERS = gutters;
-export const GRID_SIZES = gridSizes;
-
-export function generateGrid(globalStylesArg, nextBreakpointUp, breakpoint) {
+export function generateGrid(globalStyles, gridSizes, nextBreakpointUp, breakpoint) {
   const styles = {};
-  const globalStyles = globalStylesArg;
 
-  GRID_SIZES.forEach((size) => {
+  gridSizes.forEach((size) => {
     const key = `grid-${breakpoint}-${size}`;
 
     if (size === true) {
@@ -47,10 +38,16 @@ export function generateGrid(globalStylesArg, nextBreakpointUp, breakpoint) {
 
   // No need for a media query for the first size.
   if (breakpoint === 'xs') {
-    Object.assign(globalStyles, styles);
+    return {
+      ...globalStyles,
+      ...styles,
+    }
   } else {
-    globalStyles[nextBreakpointUp(breakpoint)] = styles;
+    return {
+      ...globalStyles,
+      ...{
+        [nextBreakpointUp(breakpoint)]: styles
+      },
+    }
   }
-  
-  return globalStyles;
 }

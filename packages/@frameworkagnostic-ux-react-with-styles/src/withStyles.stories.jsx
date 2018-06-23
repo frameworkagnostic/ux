@@ -4,6 +4,7 @@ import { withStyles } from './withStyles';
 import { generateGutter } from './generateGutter';
 import { generateGrid } from './generateGrid';
 import { keys as breakpointKeys } from './createBreakpoints';
+import { GRID_SIZES } from './constants';
 
 const Grid = ({ classes }) => (
   <div className={classes.container}>
@@ -26,7 +27,7 @@ const styles = (theme) => ({
   ...generateGutter('xs'),
   ...breakpointKeys.reduce((accumulator, key) => {
     // Use side effect over immutability for better performance.
-    generateGrid(accumulator, theme.breakpoints.up, key);
+    generateGrid(accumulator, GRID_SIZES, theme.breakpoints.up, key);
     return accumulator;
   }, {}),
 });

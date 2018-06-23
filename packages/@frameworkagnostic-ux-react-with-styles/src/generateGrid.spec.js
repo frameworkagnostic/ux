@@ -4,12 +4,13 @@ import { gridSizesMock, expectedTopLevelSchema } from '../__mocks__/grid-sizes.m
 
 import { keys as breakpointKeys, createBreakpoints } from './createBreakpoints';
 import { generateGrid } from './generateGrid';
+import { GRID_SIZES } from './constants';
 
 test('create breakpoint keys', () => {
   const breakpoints = createBreakpoints();
 
   const styles = breakpointKeys.reduce((accumulator, key) => {
-    generateGrid(accumulator, breakpoints.up, key);
+    generateGrid(accumulator, GRID_SIZES, breakpoints.up, key);
     return accumulator;
   }, {});
 
